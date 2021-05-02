@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <title>
+            web task
+        </title>
+        <link rel="stylesheet" type="text/css" href="./index.css" />
+        <script src="./jquery.min.js"></script>
+        <script src="./index.js"></script>
+    </head>
+    <body>
+<div class="Container">
+<div class="main-div">
+    <div class="inner-div" >
+        <table id="table" class="table" >
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Age</th>
+                <th>City</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+               <tbody id="tbody" class="tbody">
+            
+           
+            
+               </tbody>
+            
+        </table>
+    </div>
+    <div class="inner-div" >
+        <form id="form" class="form" onsubmit="event.preventDefault(); formClear();">
+            <div class="form-field">
+                <label>Name:</label>
+                <input type="text" id="name" required class="input-field name" name="Name" placeholder="Name"/>
+            </div>
+            <div class="form-field">
+                <label>Gender:</label>
+               
+                <input type="radio" class="input-field radio" id="gender" value="Male" name="gender"/>
+                <label>Male</label>
+                
+                <input type="radio" class="input-field radio" value="Female" name="gender" />
+                <label>Female</label>
+            </div>
+            <div class="form-field">
+                <label>Age:</label>
+                <input type="number" required  class="input-field age" id="age"  name="age" placeholder="enter your age"/>
+            </div>
+            <div class="form-field">
+                <label>City:</label>
+                <select class="input-field select" required  value=""  id="city" class="city" name="city" >
+                    <option value=''>City</option>
+                    <option value='Lahore'>Lahore</option>
+                    <option value='Islamabad'>Islamabad</option>
+                    <option value='Peshawar'>Peshawar</option>
+                    <option value='Karachi'>Karachi</option>
+                    <option value='Sahiwal'>Sahiwal</option>
+                    <option value='Multan'>Multan</option>
+                    <option value='Pakpattan'>Pakpattan</option>
+                    <option value='Arifwala'>Arifwala</option>
+                </select>
+            </div>
+            <div class="form-field">
+                <button type="reset" name="reset" id="reset"  class="reset buttons">reset</button>
+                <button name="add" type="submit" id="add" class="add buttons">add</button>
+                <button  name="update" type="submit"  id="update"  disabled class="update buttons">update</button>
+            </div>
+           
+        </form>
+    </div>
+</div>
+</div>
+    </body>
+    <script>
+        function myFunction() {
+          document.getElementById("myform").reset();
+        }
+        function formClear() {
+    $("#name").val("");
+    $("#form")[0].gender.value=null
+    $("#age").val("");
+    $("#city").val("");
+}
+        </script>
+</html>
