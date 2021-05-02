@@ -33,7 +33,7 @@
         <form id="form" class="form" onsubmit="event.preventDefault(); formClear();">
             <div class="form-field">
                 <label>Name:</label>
-                <input type="text" id="name" required class="input-field name" name="Name" placeholder="Name"/>
+                <input type="text" id="name" maxlength="10" onkeyup="checkChar(this)" required class="input-field name" name="Name" placeholder="Name"/>
             </div>
             <div class="form-field">
                 <label>Gender:</label>
@@ -46,7 +46,7 @@
             </div>
             <div class="form-field">
                 <label>Age:</label>
-                <input type="number" required  class="input-field age" id="age"  name="age" placeholder="enter your age"/>
+                <input type="number" required max="50" min="10" class="input-field age" id="age"  name="age" placeholder="enter your age"/>
             </div>
             <div class="form-field">
                 <label>City:</label>
@@ -82,6 +82,14 @@
     $("#form")[0].gender.value=null
     $("#age").val("");
     $("#city").val("");
+}
+function checkChar(e){
+    var letters = /^[A-Za-z]+$/;
+      if(!(e.value.match(letters))){
+          alert("only letters or alphabets are allowed")
+    e.value = e.value.substr(0, e.value.length - 1);
+}
+
 }
         </script>
 </html>

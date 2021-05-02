@@ -116,7 +116,20 @@ function resetRow(){
     
      }
 function checkValidity(){
+    let name = $("#name").val();
+    let age= $("#age").val();
     if($("#name").val() && $("#form")[0].gender.value && $("#age").val()&&$("#city").val())
-    return true;
+        if(name===name.toUpperCase()||name===name.toLowerCase()){
+            if(age>=10&&age<=50){
+                return true;
+            }else{
+                alert("Age should be between 10 to 50")
+                return false
+            }
+
+        }else{
+            alert("name should be upper or lower case only")
+            return false;
+        }
     else false
 }
